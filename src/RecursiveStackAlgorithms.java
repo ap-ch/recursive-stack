@@ -25,14 +25,12 @@ public class RecursiveStackAlgorithms {
 
     public MyStack copy(MyStack stack) { //Makes a copy of the given stack
         MyStack copiedStack = new MyStack();
-        int element = stack.pop();
 
         if (stack.isEmpty()) { //Base case
-            stack.push(element);
-            copiedStack.push(element);
-            copiedStack.printContents();
+            return copiedStack;
         }
         else { //Recursive step
+            int element = stack.pop();
             copiedStack = copy(stack);
             copiedStack.push(element);
             stack.push(element);
